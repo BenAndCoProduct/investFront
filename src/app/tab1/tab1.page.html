@@ -30,21 +30,27 @@
         <ion-card button>
           <ion-card-header class="ion-text-center">
             <ion-card-title class="ion-padding-bottom">{{invest.name}} </ion-card-title>
-            <ion-card-subtitle color="primary">{{invest.id}} $</ion-card-subtitle>
+            <ion-card-subtitle color="primary">{{invest.totalInvestmentEuro}} $</ion-card-subtitle>
             <ion-card-subtitle>Investie</ion-card-subtitle>
+
+            <ion-card-subtitle color="primary">{{invest.rendementTotal}} %</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
             <ion-item>
+              <ion-label>daily</ion-label>
+              <ion-note slot="end" color="primary">{{invest.totalRentDayEuro}} $</ion-note>
+            </ion-item>
+            <ion-item>
               <ion-label>week</ion-label>
-              <ion-note color="primary">99</ion-note>
+              <ion-note slot="end" color="primary">{{invest.totalRentWeekEuro}} $</ion-note>
             </ion-item>
             <ion-item>
               <ion-label>month </ion-label>
-              <ion-note color="primary">99</ion-note>
+              <ion-note slot="end" color="primary">{{invest.totalRentMonthEuro}} $</ion-note>
             </ion-item>
             <ion-item>
-              <ion-label>Yield</ion-label>
-              <ion-note color="primary">99</ion-note>
+              <ion-label>Year</ion-label>
+              <ion-note slot="end" color="primary">{{invest.totalRentYearEuro}} $</ion-note>
             </ion-item>
           </ion-card-content>
         </ion-card>
@@ -53,6 +59,22 @@
     </ion-row>
     <!-- ROW 2 -->
   </ion-grid>
+  <div class="slides ion-margin-bottom">
+    <ion-slides [options]="slopt" *ngFor="let invest of invests">
+      <ion-slide>
+        <ion-card>
+         <ion-card-header>
+          
+         </ion-card-header> 
+         <ion-card-content class="ion-text-left">
+          <ion-card-title class="ion-margin-bottom">Awesome Title</ion-card-title>
+          <ion-card-subtitle class="ion-text-right">10%</ion-card-subtitle>
+          <ion-progress-bar value="0.1" color="magic"></ion-progress-bar>
+          
+         </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
 
-  <ion-item-divider> </ion-item-divider>
 </ion-content>
