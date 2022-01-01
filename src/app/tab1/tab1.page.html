@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title slot="start">Mon App</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-margin-bottom">
+    <ion-row class="ion-align-items-center" >
+      <ion-col>
+        <ion-title>
+          <h1>5000$</h1>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <!-- ROW 2 -->
+
+
+
+    <ion-row class="rowInv">
+      
+      <ion-col size="6" *ngFor="let invest of invests">
+
+        <ion-card button>
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="ion-padding-bottom">{{invest.name}} </ion-card-title>
+            <ion-card-subtitle color="primary">{{invest.id}} $</ion-card-subtitle>
+            <ion-card-subtitle>Investie</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label>week</ion-label>
+              <ion-note color="primary">99</ion-note>
+            </ion-item>
+            <ion-item>
+              <ion-label>month </ion-label>
+              <ion-note color="primary">99</ion-note>
+            </ion-item>
+            <ion-item>
+              <ion-label>Yield</ion-label>
+              <ion-note color="primary">99</ion-note>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+     
+    </ion-row>
+    <!-- ROW 2 -->
+  </ion-grid>
+
+  <ion-item-divider> </ion-item-divider>
+</ion-content>

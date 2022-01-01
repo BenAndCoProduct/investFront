@@ -1,0 +1,35 @@
+ion-grid {
+  margin-top: 35px;
+
+  ion-title {
+    color: #3880ff;
+    font-size: 40px;
+    font-weight: bold;
+    h1{
+      border-bottom: 2px solid #f2a91e;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+ion-card-content {
+  ion-label {
+    font-size: 14px;
+  }
+}
+
+.rowInv {
+  ion-card {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 2px solid #3880ff;
+  }
+}
