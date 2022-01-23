@@ -17,113 +17,33 @@
       </ion-col>
     </ion-row>
 
-    <ion-card>
-      <img
-        src="https://cdn-realt.junglewp.net/wp-content/uploads/2021/12/8065-Lost-Shaker-hero-1.1-500x500.jpg"
-      />
-      <ion-card-header>
-        <ion-card-title>Maison 1</ion-card-title>
-        <ion-card-subtitle>8065 Lost Shaker Ln, Kissimmee, FL 34747</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label>blockchain</ion-label>
-          <ion-note color="primary">XDAI</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>rendementInvest </ion-label>
-          <ion-note color="primary">11</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>quantityHold</ion-label>
-          <ion-note color="primary">10</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>Raconte Ta</ion-label>
-          <ion-note color="primary">Life</ion-note>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <img
-        src="https://cdn-realt.junglewp.net/wp-content/uploads/2021/12/8065-Lost-Shaker-hero-1.1-500x500.jpg"
-      />
-      <ion-card-header>
-        <ion-card-title>Maison 1</ion-card-title>
-        <ion-card-subtitle>8065 Lost Shaker Ln, Kissimmee, FL 34747</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label>blockchain</ion-label>
-          <ion-note color="primary">XDAI</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>rendementInvest </ion-label>
-          <ion-note color="primary">11</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>quantityHold</ion-label>
-          <ion-note color="primary">10</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>Raconte Ta</ion-label>
-          <ion-note color="primary">Life</ion-note>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <img
-        src="https://cdn-realt.junglewp.net/wp-content/uploads/2021/12/8065-Lost-Shaker-hero-1.1-500x500.jpg"
-      />
-      <ion-card-header>
-        <ion-card-title>Maison 1</ion-card-title>
-        <ion-card-subtitle>8065 Lost Shaker Ln, Kissimmee, FL 34747</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label>blockchain</ion-label>
-          <ion-note color="primary">XDAI</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>rendementInvest </ion-label>
-          <ion-note color="primary">11</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>quantityHold</ion-label>
-          <ion-note color="primary">10</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>Raconte Ta</ion-label>
-          <ion-note color="primary">Life</ion-note>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <img
-        src="https://cdn-realt.junglewp.net/wp-content/uploads/2021/12/8065-Lost-Shaker-hero-1.1-500x500.jpg"
-      />
-      <ion-card-header>
-        <ion-card-title>Maison 1</ion-card-title>
-        <ion-card-subtitle>8065 Lost Shaker Ln, Kissimmee, FL 34747</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label>blockchain</ion-label>
-          <ion-note color="primary">XDAI</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>rendementInvest </ion-label>
-          <ion-note color="primary">11</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>quantityHold</ion-label>
-          <ion-note color="primary">10</ion-note>
-        </ion-item>
-        <ion-item>
-          <ion-label>Raconte Ta</ion-label>
-          <ion-note color="primary">Life</ion-note>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-  </ion-grid>
-</ion-content>
+    <ion-row>
+      <ion-col size="4" *ngFor="let actifInvest of actifInvests">
+        <ion-card>
+          <img
+            src="https://cdn-realt.junglewp.net/wp-content/uploads/2021/12/8065-Lost-Shaker-hero-1.1-500x500.jpg"
+          />
+          <ion-card-header>
+            <ion-card-title>{{actifInvest.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label>Rendement</ion-label>
+              <ion-note slot="end" color="primary">{{actifInvest.rendementInvest}}%</ion-note>
+            </ion-item>
+            <ion-item>
+              <ion-label>Investissement</ion-label>
+              <ion-note slot="end" color="primary">{{actifInvest.priceUsd}}$</ion-note>
+            </ion-item>
+            <ion-item>
+              <ion-label>Loyer par mois</ion-label>
+              <ion-note slot="end" color="primary">{{actifInvest.rentMonth}}$</ion-note>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+     
+    </ion-row>
+
+    
+   

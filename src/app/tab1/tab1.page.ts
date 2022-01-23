@@ -9,7 +9,6 @@ import { InvestService } from '../api/invest.service';
 export class Tab1Page implements OnInit {
   
   invests:any;
-  users:any;
   constructor(public investService: InvestService ) {
    
 
@@ -22,18 +21,11 @@ export class Tab1Page implements OnInit {
   }
 
   public getInvests(): any{
-    this.investService.getList().subscribe(response => {
-      this.users = response;
-      this.invests=this.users[0].investments;
-    })
+   this.invests= this.investService.invests;
     
   }
  
-  ngOnInit() {
-    // this.getAllStudents();
+  ngOnInit() {}  
   
-  }
-  names = [{ name:'Real T', price:2000},
-  { name:'lofty', price:3000}];
 
 }

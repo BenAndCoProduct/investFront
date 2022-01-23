@@ -11,7 +11,11 @@ import { retry, catchError } from 'rxjs/operators';
 export class InvestService {
 
     invests : any
-    users: any
+    source: any
+
+    httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
 
     // Handle API errors
     handleError(error: HttpErrorResponse) {
@@ -32,24 +36,37 @@ export class InvestService {
 
   
   constructor(private http: HttpClient) {
-    this.invests = [];
-    this.getAllUser();
-   
+    this.getInvestforUser().subscribe(response => {
+      this.invests=response;
+    })
+
   }
 
-  getList(): Observable<User> {
+  getInvestforUser(): Observable<any> {
     return this.http
-      .get<User>("http://localhost:8080/allUser")
+      .get<any>("http://192.168.1.9:8080/investsUser/ben")
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  getAllUser() {
-    //Get saved list of students
-   
+  getInvestforSourceUser(source:string): Observable<any> {
+    return this.http
+      .get<any>("http://192.168.1.9:8080/actifInvests/ben/"+source)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
   }
+
+  createSource(sourceForme: any): Observable<any> {
+    return this.http.post<any>("http://192.168.1.9:8080/registerSource", JSON.stringify(sourceForme), this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
 
   
 }

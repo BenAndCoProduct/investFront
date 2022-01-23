@@ -1,26 +1,12 @@
-<ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
-    <ion-title slot="start">Real T</ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="settings-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    <ion-title>source</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
 
-  <ion-list>
-    <ion-list-header>
-      <ion-label>
-        Objects as Values (compareWith)
-      </ion-label>
-    </ion-list-header>
-  
-  
-  </ion-list>
-  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+  <form [formGroup]="ionicForm2" (ngSubmit)="submitForm()" novalidate>
     <ion-item>
       <ion-label>Source</ion-label>
       <ion-select>
@@ -86,66 +72,4 @@
     </ion-row>
   </form>
 
-<!-- Initial value -->
-
-
-
-
-<!-- Datetime in popover with cover element -->
-<ion-item button="true" id="open-date-input">
-  <ion-label>Date</ion-label>
-  <ion-text slot="end">{{ dateValue }}</ion-text>
-  <ion-popover trigger="open-date-input" show-backdrop="false">
-    <ng-template>
-      <ion-datetime
-        #popoverDatetime
-        presentation="date"
-        (ionChange)="dateValue = formatDate(popoverDatetime.value)"
-      ></ion-datetime>
-    </ng-template>
-  </ion-popover>
-</ion-item>
-
-  
-  <ion-item>
-    <ion-label>Toggle</ion-label>
-    <ion-toggle slot="end"></ion-toggle>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label position="floating">Floating Input</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Input (placeholder)</ion-label>
-    <ion-input placeholder="Placeholder"></ion-input>
-  </ion-item>
-  
-  <ion-item fill="solid">
-    <ion-label position="floating">Input (Fill: Solid)</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  
-  <ion-item fill="outline">
-    <ion-label position="floating">Input (Fill: Outline)</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Helper and Error Text</ion-label>
-    <ion-input></ion-input>
-    <ion-note slot="helper">Helper Text</ion-note>
-    <ion-note slot="error">Error Text</ion-note>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Checkbox</ion-label>
-    <ion-checkbox slot="start"></ion-checkbox>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Range</ion-label>
-    <ion-range></ion-range>
-  </ion-item>
- </ion-content>
+</ion-content>

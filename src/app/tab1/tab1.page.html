@@ -14,20 +14,30 @@
   <ion-grid class="ion-margin-bottom">
     <ion-row class="ion-align-items-center" >
       <ion-col>
-        <ion-title>
-          <h1>5000$</h1>
-        </ion-title>
+        <ion-card>
+          <ion-card-content>
+            <h1>Total investit : 5000$</h1>
+            <p> Total gain par / ans : </p>
+            <p> Total gain par / mois : </p>
+            <p> Total gain par / semaine : </p>
+            <p> Total gain par / jour : </p>
+          </ion-card-content>
+    
+        </ion-card>
       </ion-col>
     </ion-row>
     <!-- ROW 2 -->
 
-
+  
 
     <ion-row class="rowInv">
-      
+     
       <ion-col size="6" *ngFor="let invest of invests">
-
-        <ion-card button>
+        <ion-slides>
+        <ion-slide>
+          
+        <ion-card>
+          <ion-button [routerLink]="['/', invest.name]">Go to detail</ion-button>
           <ion-card-header class="ion-text-center">
             <ion-card-title class="ion-padding-bottom">{{invest.name}} </ion-card-title>
             <ion-card-subtitle color="primary">{{invest.totalInvestmentEuro}} $</ion-card-subtitle>
@@ -54,22 +64,30 @@
             </ion-item>
           </ion-card-content>
         </ion-card>
+      </ion-slide>
+    </ion-slides>
       </ion-col>
-     
+
     </ion-row>
+
+
     <!-- ROW 2 -->
   </ion-grid>
   <div class="slides ion-margin-bottom">
-    <ion-slides [options]="slopt" *ngFor="let invest of invests">
+    <ion-slides [options]="slopt" >
       <ion-slide>
         <ion-card>
          <ion-card-header>
           
          </ion-card-header> 
          <ion-card-content class="ion-text-left">
-          <ion-card-title class="ion-margin-bottom">Awesome Title</ion-card-title>
+          <ion-card-title class="ion-margin-bottom">
+            Awesome Title
+          </ion-card-title>
           <ion-card-subtitle class="ion-text-right">10%</ion-card-subtitle>
-          <ion-progress-bar value="0.1" color="magic"></ion-progress-bar>
+            <p>
+              
+            </p>
           
          </ion-card-content>
         </ion-card>
